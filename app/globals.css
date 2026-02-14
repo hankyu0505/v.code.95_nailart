@@ -1,21 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-background: 255 252 249;
+  /* Soft Cream */
+  --color-foreground: 60 40 30;
+  /* Dark Brown */
+  --color-accent: 212 175 55;
+  /* Gold */
+  --font-playfair: 'Playfair Display', serif;
+}
 
 @layer base {
   :root {
     --background: 255 252 249;
-    /* Soft Cream */
     --foreground: 60 40 30;
-    /* Dark Brown */
     --accent: 212 175 55;
-    /* Gold */
     --font-playfair: 'Playfair Display', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     background-color: rgb(var(--background));
     color: rgb(var(--foreground));
+    @apply antialiased;
   }
 
   h1,
@@ -26,13 +36,4 @@
   h6 {
     font-family: var(--font-playfair), serif;
   }
-}
-
-.font-playfair {
-  font-family: var(--font-playfair), serif;
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
 }
